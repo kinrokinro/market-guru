@@ -1,8 +1,7 @@
 ![Main page](https://api.nodes.guru/agoric-market.png)
 
 ## Installation
- 1. Connect to your server via SSH
- 2. Install requirement software:
+ 1. Install requirement software:
 ```
 curl https://deb.nodesource.com/setup_14.x | sudo bash
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
@@ -10,7 +9,7 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt install nodejs make clang pkg-config libssl-dev build-essential jq -y < "/dev/null"
 sudo npm --force install -g yarn
 ```
- 3. Install Agoric SDK:
+ 2. Install Agoric SDK:
 ```
 cd $HOME
 git clone https://github.com/Agoric/agoric-sdk -b agorictest-12
@@ -19,19 +18,19 @@ yarn install
 yarn build
 yarn link-cli /usr/local/bin/agoric
 ```
- 4. Install [Market-Guru](https://github.com/kinrokinro/market-guru) Dapp:
+ 3. Install [Market-Guru](https://github.com/kinrokinro/market-guru) Dapp:
 ```
 cd $HOME
 git clone https://github.com/kinrokinro/market-guru
 cd market-guru
 agoric install
 ```
- 5. Start Agoric VM:
+ 4. Start Agoric VM:
 ```
 cd $HOME/market-guru
 screen -dmS agoric-vm bash -c "agoric start --reset ; exec bash"
 ```
- 6. Deploy contract:
+ 5. Deploy contract:
 ```
 cd $HOME/agoric-sdk
 git pull origin master
@@ -40,17 +39,26 @@ yarn build
 cd $HOME/market-guru
 screen -dmS agoric-deploy bash -c "agoric deploy ./contract/deploy.js ./api/deploy.js ; exec bash"
 ```
- 7. Open your wallet (save output link):
+ 6. Open your wallet (save output link):
 ```
 agoric open --repl
 ```
- 8. Start Dapp:
+ 7. Start Dapp:
 ```
 screen -dmS agoric-ui bash -c "(cd ui && yarn start) ; exec bash"
 ```
- 9. Go to the [Market Guru](http://localhost:3000)
- 10. Go to the wallet (your saved link in step 7)
- 11. Under "Dapps" in the wallet, enable the nodesGuruNFTs Dapp.
+ 8. Go to the [Market Guru](http://localhost:3000)
+ 9. Go to the wallet (your saved link in step 7)
+ 10. Under "Dapps" in the wallet, enable the nodesGuruNFTs Dapp.
+ 11. If you connect to remote server do the following commands on your local machine:
+ ```
+ ssh -L 3000:127.0.0.1:3000 -C -N -l root YOUR_REMOTE_IP
+ ```
+ and
+ ```
+ ssh -L 8000:127.0.0.1:8000 -C -N -l root YOUR_REMOTE_IP
+ ```
+ Enter your password and localhost:3000 with localhost:8000 will works correctly.
 
 
 ## Using the Dapp
