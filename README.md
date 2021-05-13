@@ -75,4 +75,4 @@ To learn more about how to build Agoric Dapps, please see the [Dapp Guide](https
 
 See the [Dapp Deployment Guide](https://github.com/Agoric/agoric-sdk/wiki/Dapp-Deployment-Guide) for how to deploy this Dapp on a public website, such as https://market.nodes.guru
 
-<div align="right">Based on the <a href="https://github.com/Agoric/dapp-card-store target="__blank">Agoric Card Store</a></div>
+<div align="right">Based on the <a href="https://github.com/Agoric/dapp-card-store" target="__blank">Agoric Card Store</a></div>
